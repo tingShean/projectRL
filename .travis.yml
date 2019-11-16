@@ -4,6 +4,12 @@ language: go
 go:
   - 1.13.x
 
+git:
+  depth: 2
+
+# Skip the install step
+install: true
+
 # for test
 script:
   - go test

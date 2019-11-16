@@ -8,8 +8,11 @@ git:
   depth: 2
 
 # install
-install:
-  - go get github.com/tingShean/projectRL/ratelimit
+install: true
+
+# need this package
+before_script:
+  - go install github.com/tingShean/projectRL/ratelimit
 
 # for test
 script:

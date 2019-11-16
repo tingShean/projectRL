@@ -4,8 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"net"
-
-	"ratelimit/ratelimit"
+	"ratelimit"
 )
 
 type visitor struct {

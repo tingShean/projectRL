@@ -9,4 +9,4 @@ script:
   - go get -v
   - echo $GOPATH
   - echo $PWD
-  - go test ./..
+  - go test -v ./...

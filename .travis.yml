@@ -4,16 +4,7 @@ language: go
 go:
   - 1.13.x
 
-git:
-  depth: 2
-
-# install
-install: true
-
-# need this package
-before_script:
-  - go install github.com/tingShean/projectRL/ratelimit
-
 # for test
 script:
-  - go test
+  - go get -v
+  - go test ./..

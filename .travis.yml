@@ -9,5 +9,4 @@ script:
   - go get -v
   - echo $GOPATH
   - echo $PWD
-  - mv $GOPATH/src/github.com/tingShean/ratelimit $GOPATH/src/
   - go test ./..

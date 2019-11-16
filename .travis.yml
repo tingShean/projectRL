@@ -7,8 +7,9 @@ go:
 git:
   depth: 2
 
-# Skip the install step
-install: true
+# install
+install:
+  - go get github.com/tingShean/projectRL/ratelimit
 
 # for test
 script:

@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net"
 
-	ratelimit "github.com/tingShean/projectRL/ratelimit"
+	"ratelimit/ratelimit"
 )
 
 type visitor struct {

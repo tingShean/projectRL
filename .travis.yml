@@ -6,5 +6,8 @@ go:
 
 # for test
 script:
-  - go get -v
+  - ls
+  - echo $GOPATH
+  - echo $PWD
+  - mv $GOPATH/src/github.com/tingShean/ratelimit $GOPATH/src/
   - go test ./..

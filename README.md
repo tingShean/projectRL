@@ -3,3 +3,10 @@
 
 
 A simple server ratelimit
+
+# clone and run
+```
+$ git clone <repostory> github.com/tingShean/projectRL
+$ cd github.com/tingShean/projectRL
+$ go run http.go
+```

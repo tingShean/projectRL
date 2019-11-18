@@ -7,5 +7,5 @@ RUN	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o app
 
 # final
 FROM	scratch
-COPY	--from=build-env app /
+COPY	--from=build-env /go/src/github.com/tingShean/projectRL/app /
 ENTRYPOINT ["app"]

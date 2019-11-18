@@ -43,7 +43,8 @@ func get_visitor(ip string) *ratelimit.Limiter {
 }
 
 func Hello_world(w http.ResponseWriter, req *http.Request) {
-	res := "hello world %v rate limit %v"
+	//res := "hello world %v rate limit %v"
+	res := "%v"
 
 	// get ip
 	ip := req.Header.Get("X-Forwarded-For")
@@ -65,8 +66,8 @@ func Hello_world(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	if lim.GetLimit() >= ratelimit.Limit(61) {
-		fmt.Fprintf(w, res, ip, "Error")
+		fmt.Fprintf(w, res, "Error")
 	} else {
-		fmt.Fprintf(w, res, ip, lim.GetLimit())
+		fmt.Fprintf(w, res, lim.GetLimit())
 	}
 }

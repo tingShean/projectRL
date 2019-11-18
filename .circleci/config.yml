@@ -16,7 +16,7 @@ jobs:
             go get -t -v ./...
       - run: go test -v -race ./...
 
-  "latest"
+  "latest":
     <<: *test
     enviroment:
       LATEST: true

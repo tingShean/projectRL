@@ -30,3 +30,11 @@ jobs:
     <<: *test
     docker:
       - image: circleci/golang:1.12
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "latest"
+      - "1.13"
+      - "1.12"

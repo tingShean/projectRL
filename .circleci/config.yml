@@ -6,15 +6,15 @@ jobs:
     # run the step
     docker:
       - image: circleci/golang:latest
-      working_directory: /go/src/github.com/tingShean/projectRL
-      steps: &steps
-        - checkout
-        - run: go version
-        - run:
-            name: "Fetch dependecies"
-            command: >
-              go get -t -v ./...
-        - run: go test -v -race ./...
+    working_directory: /go/src/github.com/tingShean/projectRL
+    steps: &steps
+      - checkout
+      - run: go version
+      - run:
+          name: "Fetch dependecies"
+          command: >
+            go get -t -v ./...
+      - run: go test -v -race ./...
 
   "latest"
     <<: *test

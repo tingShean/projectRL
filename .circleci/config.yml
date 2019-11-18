@@ -16,6 +16,18 @@ jobs:
             go get -t -v ./...
       - run: go test -v -race ./...
 
+  build:
+    environame:
+      IMAGE_NAME: jonathancardoso/building-on-ci
+    docker:
+      - image: circleci/buildpack-deps:stretch
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: docker build -t $IMAGE_NAME:latest .
+
   "latest":
     <<: *test
     enviroment:
@@ -26,21 +38,15 @@ jobs:
     docker:
       - image: circleci/golang:1.12
 
-  "1.11":
-    <<: *test
-    docker:
-      - image: circleci/golang:1.11
-
-  "1.10":
-    <<: *test
-    docker:
-      - image: circleci/golang:1.10
-
 workflows:
   version: 2
   build:
     jobs:
       - "latest"
       - "1.12"
-      - "1.11"
-      - "1.10"
+  build-master:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master

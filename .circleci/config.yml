@@ -18,7 +18,7 @@ jobs:
 
   build:
     environame:
-      IMAGE_NAME: jonathancardoso/building-on-ci
+      IMAGE_NAME: projectRL
     docker:
       - image: circleci/buildpack-deps:stretch
     steps:

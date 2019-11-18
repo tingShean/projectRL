@@ -17,7 +17,7 @@ jobs:
       - run: go test -v -race ./...
 
   build:
-    environame:
+    enviroment:
       IMAGE_NAME: projectRL
     docker:
       - image: circleci/buildpack-deps:stretch
